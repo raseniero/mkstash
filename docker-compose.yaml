@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  stash:
+    image: stash-sapper:latest
+    build:
+      context: .
+    volumes:
+      - ".:/app"
+    ports:
+      - "80:3000"
+    networks:
+      - stash
+
+networks:
+  stash:
